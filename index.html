@@ -10,8 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for gold icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fancybox 5 for Image Zoom -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <!-- Main Style Sheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
@@ -20,50 +22,7 @@
         <div class="header-container">
             <!-- Brand Logo -->
             <a href="#" class="logo-area" id="logoLink">
-                <div class="logo-svg">
-                    <svg viewBox="0 0 100 100" class="gold-tree-svg" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Outer Elegant Thin Circle -->
-                        <circle cx="50" cy="50" r="48" fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-dasharray="3 3"/>
-                        <!-- Inner Gold Tree Symbol -->
-                        <defs>
-                            <linearGradient id="goldGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="#C59737" />
-                                <stop offset="50%" stop-color="#F3D075" />
-                                <stop offset="100%" stop-color="#C59737" />
-                            </linearGradient>
-                        </defs>
-                        <!-- Trunk & Roots -->
-                        <path d="M47 80 C 47 75, 43 70, 43 65 C 43 60, 48 55, 48 45 L 52 45 C 52 55, 57 60, 57 65 C 57 70, 53 75, 53 80 Z" fill="url(#goldGradient)"/>
-                        <path d="M48 78 C 42 82, 35 83, 30 84 C 35 81, 44 79, 47 76 Z" fill="url(#goldGradient)"/>
-                        <path d="M52 78 C 58 82, 65 83, 70 84 C 65 81, 56 79, 53 76 Z" fill="url(#goldGradient)"/>
-                        <!-- Main Branches -->
-                        <path d="M46 52 C 38 48, 32 40, 28 35 C 33 39, 41 45, 47 48 Z" fill="url(#goldGradient)"/>
-                        <path d="M54 52 C 62 48, 68 40, 72 35 C 67 39, 59 45, 53 48 Z" fill="url(#goldGradient)"/>
-                        <path d="M50 46 C 50 35, 47 25, 40 18 C 46 24, 49 32, 50 40 Z" fill="url(#goldGradient)"/>
-                        <path d="M50 46 C 50 35, 53 25, 60 18 C 54 24, 51 32, 50 40 Z" fill="url(#goldGradient)"/>
-                        <!-- Stylized Leaf Canopy (Dots/Leaves) -->
-                        <circle cx="50" cy="15" r="4" fill="url(#goldGradient)"/>
-                        <circle cx="38" cy="22" r="3.5" fill="url(#goldGradient)"/>
-                        <circle cx="62" cy="22" r="3.5" fill="url(#goldGradient)"/>
-                        <circle cx="28" cy="30" r="3" fill="url(#goldGradient)"/>
-                        <circle cx="72" cy="30" r="3" fill="url(#goldGradient)"/>
-                        <circle cx="20" cy="42" r="3" fill="url(#goldGradient)"/>
-                        <circle cx="80" cy="42" r="3" fill="url(#goldGradient)"/>
-                        <circle cx="34" cy="34" r="2.5" fill="url(#goldGradient)"/>
-                        <circle cx="66" cy="34" r="2.5" fill="url(#goldGradient)"/>
-                        <circle cx="44" cy="28" r="3" fill="url(#goldGradient)"/>
-                        <circle cx="56" cy="28" r="3" fill="url(#goldGradient)"/>
-                        <circle cx="48" cy="38" r="2" fill="url(#goldGradient)"/>
-                        <circle cx="52" cy="38" r="2" fill="url(#goldGradient)"/>
-                        <!-- Additional Roots flare -->
-                        <path d="M50 78 C 50 82, 50 86, 50 88" stroke="url(#goldGradient)" stroke-width="1.5" fill="none"/>
-                    </svg>
-                </div>
-                <div class="logo-text">
-                    <span class="brand-title">WORLD</span>
-                    <span class="brand-subtitle">AGARWOOD</span>
-                    <span class="brand-slogan">NÂNG TẦM GIÁ TRỊ TRẦM HƯƠNG</span>
-                </div>
+                <img src="assets/images/header.png" alt="World Agarwood Logo" class="header-logo">
             </a>
 
             <!-- Desktop Navigation Menu -->
@@ -71,15 +30,22 @@
                 <ul>
                     <li>
                         <a href="#trang-chu" class="nav-item active" id="navHome">
-                            <i class="fa-solid fa-house"></i> TRANG CHỦ
+                            <img src="assets/images/01icon.png" class="nav-icon" alt=""> TRANG CHỦ
                         </a>
                     </li>
-                    <li><a href="#cong-nghe" class="nav-item" id="navTech">CÔNG NGHỆ</a></li>
-                    <li><a href="#quy-trinh" class="nav-item" id="navProcess">QUY TRÌNH</a></li>
-                    <li><a href="#dau-tu" class="nav-item" id="navInvest">ĐẦU TƯ</a></li>
-                    <li><a href="#san-pham" class="nav-item" id="navProducts">SẢN PHẨM</a></li>
-                    <li><a href="#ve-chung-toi" class="nav-item" id="navAbout">VỀ CHÚNG TÔI</a></li>
-                    <li><a href="#lien-he" class="nav-item" id="navContact">LIÊN HỆ</a></li>
+                    <li><a href="#cong-nghe" class="nav-item" id="navTech"><img src="assets/images/02icon.png" class="nav-icon" alt=""> CÔNG NGHỆ</a></li>
+                    <li><a href="#quy-trinh" class="nav-item" id="navProcess"><img src="assets/images/03icon.png" class="nav-icon" alt=""> QUY TRÌNH</a></li>
+                    <li><a href="#dau-tu" class="nav-item" id="navInvest"><img src="assets/images/04icon.png" class="nav-icon" alt=""> ĐẦU TƯ</a></li>
+                    <li><a href="#san-pham" class="nav-item" id="navProducts"><img src="assets/images/05icon.png" class="nav-icon" alt=""> SẢN PHẨM</a></li>
+                    <li><a href="#ve-chung-toi" class="nav-item" id="navAbout"><img src="assets/images/06icon.png" class="nav-icon" alt=""> VỀ CHÚNG TÔI</a></li>
+                    <li><a href="#lien-he" class="nav-item" id="navContact"><img src="assets/images/07icon.png" class="nav-icon" alt=""> LIÊN HỆ</a></li>
+                    <li class="nav-dropdown">
+                        <a href="javascript:void(0)" class="nav-item"><img src="https://flagcdn.com/w40/vn.png" alt="VN" class="flag-icon current-lang-flag"> <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="submenu">
+                            <li><a href="javascript:void(0)" class="submenu-item lang-item active" data-lang="vi"><img src="https://flagcdn.com/w40/vn.png" alt="VN" class="flag-icon"> Tiếng Việt</a></li>
+                            <li><a href="javascript:void(0)" class="submenu-item lang-item" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon"> Tiếng Anh</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
 
@@ -104,17 +70,24 @@
     <!-- Mobile Drawer Navigation -->
     <div class="mobile-drawer" id="mobileDrawer">
         <div class="drawer-header">
-            <span class="drawer-logo-text">WORLD AGARWOOD</span>
+            <img src="assets/images/header.png" alt="World Agarwood Logo" class="drawer-logo">
             <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
         </div>
         <ul class="drawer-links">
-            <li><a href="#trang-chu" class="drawer-item active" id="drawerHome"><i class="fa-solid fa-house"></i> TRANG CHỦ</a></li>
-            <li><a href="#cong-nghe" class="drawer-item" id="drawerTech">CÔNG NGHỆ</a></li>
-            <li><a href="#quy-trinh" class="drawer-item" id="drawerProcess">QUY TRÌNH</a></li>
-            <li><a href="#dau-tu" class="drawer-item" id="drawerInvest">ĐẦU TƯ</a></li>
-            <li><a href="#san-pham" class="drawer-item" id="drawerProducts">SẢN PHẨM</a></li>
-            <li><a href="#ve-chung-toi" class="drawer-item" id="drawerAbout">VỀ CHÚNG TÔI</a></li>
-            <li><a href="#lien-he" class="drawer-item" id="drawerContact">LIÊN HỆ</a></li>
+            <li><a href="#trang-chu" class="drawer-item active" id="drawerHome"><img src="assets/images/01icon.png" class="nav-icon" alt=""> TRANG CHỦ</a></li>
+            <li><a href="#cong-nghe" class="drawer-item" id="drawerTech"><img src="assets/images/02icon.png" class="nav-icon" alt=""> CÔNG NGHỆ</a></li>
+            <li><a href="#quy-trinh" class="drawer-item" id="drawerProcess"><img src="assets/images/03icon.png" class="nav-icon" alt=""> QUY TRÌNH</a></li>
+            <li><a href="#dau-tu" class="drawer-item" id="drawerInvest"><img src="assets/images/04icon.png" class="nav-icon" alt=""> ĐẦU TƯ</a></li>
+            <li><a href="#san-pham" class="drawer-item" id="drawerProducts"><img src="assets/images/05icon.png" class="nav-icon" alt=""> SẢN PHẨM</a></li>
+            <li><a href="#ve-chung-toi" class="drawer-item" id="drawerAbout"><img src="assets/images/06icon.png" class="nav-icon" alt=""> VỀ CHÚNG TÔI</a></li>
+            <li><a href="#lien-he" class="drawer-item" id="drawerContact"><img src="assets/images/07icon.png" class="nav-icon" alt=""> LIÊN HỆ</a></li>
+            <li class="drawer-dropdown">
+                <a href="javascript:void(0)" class="drawer-item" id="drawerLangToggle"><img src="https://flagcdn.com/w40/vn.png" alt="VN" class="flag-icon current-lang-flag"> <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="drawer-submenu">
+                    <li><a href="javascript:void(0)" class="drawer-submenu-item lang-item active" data-lang="vi"><img src="https://flagcdn.com/w40/vn.png" alt="VN" class="flag-icon"> Tiếng Việt</a></li>
+                    <li><a href="javascript:void(0)" class="drawer-submenu-item lang-item" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon"> Tiếng Anh</a></li>
+                </ul>
+            </li>
         </ul>
         <div class="drawer-footer">
             <a href="tel:+84903885179" class="drawer-cta-button">
@@ -127,12 +100,46 @@
     <div class="drawer-overlay" id="drawerOverlay"></div>
 
     <!-- Main Content Section -->
-    <main id="mainSection"></main>
+    <main id="mainSection">
+        <section id="trang-chu" class="tab-content active">
+            <img src="assets/images/01vn.png" class="lang-img vi active" alt="Trang chủ - Tiếng Việt">
+            <img src="assets/images/01eng.png" class="lang-img en" alt="Home - English">
+        </section>
+        <section id="cong-nghe" class="tab-content">
+            <img src="assets/images/02vn.jpg" class="lang-img vi active" alt="Công nghệ - Tiếng Việt">
+            <img src="" class="lang-img en" alt="Technology - English">
+        </section>
+        <section id="quy-trinh" class="tab-content">
+            <img src="assets/images/03vn.png" class="lang-img vi active" alt="Quy trình - Tiếng Việt">
+            <img src="assets/images/03eng.png" class="lang-img en" alt="Process - English">
+        </section>
+        <section id="dau-tu" class="tab-content">
+            <img src="assets/images/04vn.png" class="lang-img vi active" alt="Đầu tư - Tiếng Việt">
+            <img src="assets/images/04eng.png" class="lang-img en" alt="Investment - English">
+        </section>
+        <section id="san-pham" class="tab-content">
+            <img src="assets/images/05vn.png" class="lang-img vi active" alt="Sản phẩm - Tiếng Việt">
+            <img src="" class="lang-img en" alt="Products - English">
+        </section>
+        <section id="ve-chung-toi" class="tab-content">
+            <img src="assets/images/06vn.png" class="lang-img vi active" alt="Về chúng tôi - Tiếng Việt">
+            <img src="assets/images/06eng.png" class="lang-img en" alt="About us - English">
+        </section>
+        <section id="lien-he" class="tab-content">
+            <img src="assets/images/07vn.png" class="lang-img vi active" alt="Liên hệ - Tiếng Việt">
+            <img src="assets/images/07eng.png" class="lang-img en" alt="Contact - English">
+        </section>
+    </main>
 
     <!-- Footer Section -->
     <footer id="footerSection"></footer>
 
+    <!-- Fancybox 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        // Fancybox logic is now handled in script.js conditionally for mobile
+    </script>
     <!-- Interactive Logic Script -->
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

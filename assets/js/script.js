@@ -54,26 +54,50 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Navigation Links Handling
     const setActiveLink = (elements, clickedElement) => {
         elements.forEach(item => {
-            item.classList.remove('active');
+            // Ignore dropdown toggles when clearing active class
+            if (item.id !== 'drawerLangToggle' && !item.classList.contains('dropdown-icon') && !item.parentElement.classList.contains('nav-dropdown')) {
+                item.classList.remove('active');
+            }
         });
         clickedElement.classList.add('active');
+    };
+
+    // Helper to switch main section content
+    const switchTabContent = (targetId) => {
+        document.querySelectorAll('.tab-content').forEach(section => {
+            section.classList.remove('active');
+        });
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
     };
 
     // Desktop Nav Items Click
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
-            // If it is just an anchor placeholder, prevent default to avoid page jump
-            if (item.getAttribute('href').startsWith('#')) {
-                // Keep default behavior for testing transitions, but can intercept if needed
+            const href = item.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                setActiveLink(navItems, item);
+                switchTabContent(href.substring(1));
             }
-            setActiveLink(navItems, item);
         });
     });
 
     // Mobile Drawer Items Click
     drawerItems.forEach(item => {
         item.addEventListener('click', (e) => {
-            setActiveLink(drawerItems, item);
+            // Do not close drawer if clicking the language toggle
+            if (item.id === 'drawerLangToggle') return;
+            
+            const href = item.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                setActiveLink(drawerItems, item);
+                switchTabContent(href.substring(1));
+            }
+            
             closeMobileDrawer();
         });
     });
@@ -102,4 +126,88 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // We only enable scrollSpy if sections actually exist beyond the simple placeholders
     // window.addEventListener('scroll', scrollSpy);
+
+    // 6. Mobile Submenu Toggle
+    const drawerLangToggle = document.getElementById('drawerLangToggle');
+    if (drawerLangToggle) {
+        drawerLangToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const parentLi = drawerLangToggle.parentElement;
+            parentLi.classList.toggle('open');
+        });
+    }
+
+    // 7. Language Selection Active State
+    const langItems = document.querySelectorAll('.lang-item');
+    langItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const selectedLang = item.getAttribute('data-lang');
+            
+            // Set active class for the clicked item's group
+            langItems.forEach(l => {
+                if(l.getAttribute('data-lang') === selectedLang) {
+                    l.classList.add('active');
+                } else {
+                    l.classList.remove('active');
+                }
+            });
+            
+            // Switch images in all tab contents
+            document.querySelectorAll('.lang-img').forEach(img => {
+                if (img.classList.contains(selectedLang)) {
+                    img.classList.add('active');
+                } else {
+                    img.classList.remove('active');
+                }
+            });
+            
+            // Update the main toggle flags
+            const selectedFlag = item.querySelector('img');
+            if (selectedFlag) {
+                const flagSrc = selectedFlag.getAttribute('src');
+                const flagAlt = selectedFlag.getAttribute('alt');
+                document.querySelectorAll('.current-lang-flag').forEach(img => {
+                    img.setAttribute('src', flagSrc);
+                    img.setAttribute('alt', flagAlt);
+                });
+            }
+            
+            // Update texts based on selected language
+            const textVi = selectedLang === 'vi' ? 'Tiếng Việt' : 'Vietnamese';
+            const textEn = selectedLang === 'vi' ? 'Tiếng Anh' : 'English';
+            
+            document.querySelectorAll('.lang-item[data-lang="vi"]').forEach(viItem => {
+                const img = viItem.querySelector('img');
+                if (img) viItem.innerHTML = img.outerHTML + ' ' + textVi;
+            });
+            
+            document.querySelectorAll('.lang-item[data-lang="en"]').forEach(enItem => {
+                const img = enItem.querySelector('img');
+                if (img) enItem.innerHTML = img.outerHTML + ' ' + textEn;
+            });
+            
+            // Do not translate, just UI as requested
+            // Close drawer if on mobile
+            if (mobileDrawer.classList.contains('open')) {
+                // closeMobileDrawer();
+            }
+        });
+    });
+
+    // 8. Mobile Fancybox Integration (Single Image Only)
+    document.querySelectorAll('.tab-content img').forEach(img => {
+        img.addEventListener('click', () => {
+            // Only activate Fancybox on mobile devices
+            if (window.innerWidth <= 768) {
+                const src = img.getAttribute('src');
+                // Ensure image source is valid before opening
+                if (src && src.trim() !== "") {
+                    // Pass a single item array to disable gallery swiping
+                    Fancybox.show([{ src: src, type: 'image' }]);
+                }
+            }
+        });
+    });
+
 });
