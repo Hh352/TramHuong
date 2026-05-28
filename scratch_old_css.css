@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    WORLD AGARWOOD - PREMIUM CSS DESIGN SYSTEM
    ========================================================================== */
 
@@ -70,48 +70,25 @@ body {
     width: 100%;
     height: var(--header-height-desktop);
     z-index: 1000;
-    background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 20%, #000000 35%, #000000 65%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0.4) 100%);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom: none; /* Removed solid border */
+    background: #000000; /* Solid pitch black background */
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
     transition: var(--transition-smooth);
     display: flex;
     align-items: center;
 }
 
-/* Gradient fading line at the bottom of header */
-.main-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%; /* Only span the middle section */
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.6) 20%, rgba(212, 175, 55, 1) 50%, rgba(212, 175, 55, 0.6) 80%, transparent 100%);
-    z-index: 1001;
-}
-
 /* Sticky Header on Scroll */
 .main-header.scrolled {
     height: var(--header-height-scrolled);
-    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 20%, #000000 35%, #000000 65%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.5) 100%);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom: none; /* Removed solid border */
+    background: #000000; /* Solid pitch black background */
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 1px 15px rgba(212, 175, 55, 0.1);
 }
 
-/* Slightly brighter line on scroll */
-.main-header.scrolled::after {
-    background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.7) 20%, rgba(212, 175, 55, 1) 50%, rgba(212, 175, 55, 0.7) 80%, transparent 100%);
-}
-
 .header-container {
-    width: 100%;
-    max-width: 1920px;
+    width: 96%;
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 0 25px; /* Safe area padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -122,8 +99,6 @@ body {
 .logo-area {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    flex: 0 0 auto;
     text-decoration: none;
     gap: 12px;
     transition: var(--transition-smooth);
@@ -134,9 +109,8 @@ body {
 }
 
 .header-logo {
-    height: 90px; /* Restored fixed height */
+    height: 57px; /* Balanced size */
     width: auto;
-    margin-bottom: -25px; /* Overhang below the header */
     object-fit: contain;
     filter: drop-shadow(0 0 4px var(--gold-glow));
     transition: var(--transition-smooth);
@@ -144,77 +118,91 @@ body {
 
 /* --- Desktop Menu Styling --- */
 .nav-menu {
-    display: flex;
-    justify-content: center;
-    flex: 0 1 auto;
+    display: block;
+    height: 100%;
 }
 
 .nav-menu ul {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 6px; /* Ultra-compact spacing to ensure it always fits */
+    gap: 0;
+    height: 100%;
 }
 
 .nav-menu li {
+    height: 100%;
     display: flex;
-    align-items: center;
 }
 
 .nav-item {
-    font-size: 11px; /* Slightly smaller to fit heavy zoom */
+    font-size: 13px;
     font-weight: 600;
-    color: #ffffff; /* White text to match screenshot */
+    color: #b5c4b8;
     text-decoration: none;
-    letter-spacing: 0.1px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 5px 8px; /* Ultra-compact padding */
+    padding: 0 14px; /* Balanced padding */
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    white-space: nowrap; /* Prevent text from wrapping */
-    border: 1px solid transparent; /* Prevents layout shift */
-    border-radius: 6px;
+    white-space: nowrap; /* Prevent text from wrapping to multiple lines */
     transition: var(--transition-smooth);
 }
 
 .nav-icon {
-    color: #D4AF37; /* ALWAYS gold color */
+    width: 25px;
+    height: 20px;
+    object-fit: contain;
     margin-right: 8px;
-    font-size: 14px;
-    display: inline-block;
-    vertical-align: middle;
+    display: none; /* Hidden until user sets a valid src */
 }
 
-.nav-icon-img {
-    height: 18px;
-    width: auto;
-    margin-right: 5px;
+/* When the img has a src, show it */
+.nav-icon[src]:not([src=""]) {
     display: inline-block;
-    vertical-align: middle;
-}
-
-/* Specific scale adjustments for icons with internal padding */
-.nav-icon-img[src*="iconcongnghe"] {
-    transform: scale(2.8);
 }
 
 .nav-item:hover {
     color: var(--gold-light);
-    border-color: rgba(212, 175, 55, 0.4);
-    background: rgba(212, 175, 55, 0.05);
+    background: rgba(212, 175, 55, 0.02);
 }
 
-/* Active Area: Gold rounded border box */
+/* Custom Bottom Underline Highlight for Hover */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gold-light);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+.nav-item:hover::after {
+    transform: scaleX(0.7);
+    background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+/* Active Area: Glowing background highlight and bottom neon gold light line */
 .nav-item.active {
-    color: var(--gold-primary) !important;
+    color: var(--gold-light) !important;
     font-weight: 700;
-    border-color: #D4AF37 !important;
-    background: rgba(0, 0, 0, 0.4); /* Subtle dark background for contrast */
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    text-shadow: 0 0 10px rgba(243, 208, 117, 0.6);
+    background: linear-gradient(to top, rgba(212, 175, 55, 0.35) 0%, rgba(212, 175, 55, 0.12) 50%, rgba(212, 175, 55, 0) 100%);
 }
 
+.nav-item.active::after {
+    transform: scaleX(1);
+    height: 4px;
+    background: var(--gold-light);
+    box-shadow: 0 -3px 15px var(--gold-accent), 0 0 25px var(--gold-accent);
+}
 
 /* --- Submenu Styling --- */
 .nav-dropdown {
@@ -246,8 +234,8 @@ body {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     display: flex;
     flex-direction: column;
-    height: auto;
-    padding: 0;
+    height: auto; /* Override inherited height: 100% from .nav-menu ul */
+    padding: 0; /* Removed top/bottom padding to allow active background to fill entirely */
     z-index: 1010;
 }
 
@@ -278,7 +266,7 @@ body {
     font-weight: 500;
     color: #b5c4b8;
     text-decoration: none;
-    padding: 14px 24px;
+    padding: 14px 24px; /* Slightly increased vertical padding since container padding is removed */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -295,44 +283,40 @@ body {
 }
 
 
-/* --- Call To Action (LIÊN HỆ NGAY) --- */
+/* --- Call To Action (LIĂN Há»† NGAY) --- */
 .header-cta {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex: 0 0 auto;
+    display: block;
 }
 
 .cta-button {
     position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 20px;
+    gap: 5px;
+    padding: 8px 16px;
     border-radius: 50px;
-    background: linear-gradient(to right, #C59737 0%, #F3D075 50%, #C59737 100%); /* Gold shine gradient */
-    color: #000000; /* Black text */
+    background: linear-gradient(135deg, #F3D075 0%, #C59737 50%, #A2761C 100%);
+    color: var(--bg-dark-primary);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 700;
     letter-spacing: 0.5px;
     overflow: hidden;
-    white-space: nowrap;
-    flex-shrink: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+    flex-shrink: 0; /* Prevent button from shrinking */
     transition: var(--transition-smooth);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-    border: none;
+    box-shadow: 0 4px 15px rgba(197, 151, 55, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cta-button i {
-    font-size: 13px;
-    color: #000000; /* Black phone icon */
+    font-size: 12px;
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(243, 208, 117, 0.6);
-    color: #000000;
+    box-shadow: 0 6px 20px rgba(243, 208, 117, 0.5);
+    color: #000;
 }
 
 .cta-button:active {
@@ -655,18 +639,18 @@ footer {
    ========================================================================== */
 
 /* Responsive break points for navigation layout */
-@media (max-width: 1450px) {
+@media (max-width: 1100px) {
     .nav-menu ul {
-        gap: 8px;
+        gap: 12px;
     }
     
     .nav-item {
-        font-size: 11px;
+        font-size: 11.5px;
         padding: 6px 8px;
     }
     
     .active-home {
-        padding: 6px 10px;
+        padding: 6px 12px;
     }
     
     .brand-title {
@@ -682,17 +666,10 @@ footer {
     }
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 1024px) {
     /* Hide desktop nav and CTA button */
     .nav-menu {
         display: none;
-    }
-    
-    /* Reset logo on mobile */
-    .header-logo {
-        height: auto;
-        max-height: 55px;
-        margin-bottom: 0;
     }
     
     .header-cta {
