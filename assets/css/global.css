@@ -147,13 +147,14 @@ body {
     display: flex;
     justify-content: center;
     flex: 0 1 auto;
+    margin: 0 40px; /* Ensure healthy spacing between Logo and CTA button */
 }
 
 .nav-menu ul {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 6px; /* Ultra-compact spacing to ensure it always fits */
+    gap: 10px; /* Adjusted gap to keep tabs spacious but optimized for width */
 }
 
 .nav-menu li {
@@ -162,13 +163,13 @@ body {
 }
 
 .nav-item {
-    font-size: 11px; /* Slightly smaller to fit heavy zoom */
+    font-size: 11px; /* Optimized font size */
     font-weight: 600;
-    color: #ffffff; /* White text to match screenshot */
+    color: #ffffff; /* White text */
     text-decoration: none;
-    letter-spacing: 0.1px;
+    letter-spacing: 0.15px;
     text-transform: uppercase;
-    padding: 5px 8px; /* Ultra-compact padding */
+    padding: 6px 10px; /* Balanced, comfortable padding */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,7 +189,7 @@ body {
 }
 
 .nav-icon-img {
-    height: 18px;
+    height: 18px; /* Restored original height */
     width: auto;
     margin-right: 5px;
     display: inline-block;
@@ -198,6 +199,11 @@ body {
 /* Specific scale adjustments for icons with internal padding */
 .nav-icon-img[src*="iconcongnghe"] {
     transform: scale(2.8);
+}
+
+.nav-icon-img[src*="icontintuc"] {
+    mix-blend-mode: screen;
+    transform: scale(2.2);
 }
 
 .nav-item:hover {
@@ -655,37 +661,54 @@ footer {
    ========================================================================== */
 
 /* Responsive break points for navigation layout */
-@media (max-width: 1450px) {
+@media (max-width: 1550px) {
+    .nav-menu {
+        margin: 0 25px; /* Reduce side margin slightly on smaller desktop screens */
+    }
+    
     .nav-menu ul {
         gap: 8px;
     }
     
     .nav-item {
-        font-size: 11px;
-        padding: 6px 8px;
+        font-size: 10.5px;
+        padding: 5px 8px;
     }
     
-    .active-home {
-        padding: 6px 10px;
-    }
-    
-    .brand-title {
-        font-size: 16px;
-    }
-    
-    .brand-subtitle {
-        font-size: 13.5px;
-    }
-    
-    .brand-slogan {
-        font-size: 7px;
+    .nav-icon-img {
+        height: 16px;
+        margin-right: 5px;
     }
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 1450px) {
+    .nav-menu {
+        margin: 0 15px; /* Safely fit everything on 1450px screen width */
+    }
+    
+    .nav-menu ul {
+        gap: 5px;
+    }
+    
+    .nav-item {
+        font-size: 10.5px;
+        padding: 4px 6px;
+    }
+    
+    .nav-icon-img {
+        height: 14px;
+        margin-right: 3px;
+    }
+}
+
+@media (max-width: 1380px) {
     /* Hide desktop nav and CTA button */
     .nav-menu {
         display: none;
+    }
+    
+    .header-container {
+        padding: 0 20px; /* Reduced padding on mobile/tablet viewports */
     }
     
     /* Reset logo on mobile */
@@ -713,7 +736,8 @@ footer {
 
 @media (max-width: 480px) {
     .header-container {
-        width: 90%;
+        width: 100%;
+        padding: 0 15px; /* Symmetrical padding on small screens */
     }
     
     .logo-svg {

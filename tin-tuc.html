@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-vi="World Agarwood - Tin Tức & Kiến Thức Trầm Hương" data-en="World Agarwood - News & Agarwood Knowledge">World Agarwood - Tin Tức & Kiến Thức Trầm Hương</title>
+    <!-- Google Fonts: Cinzel for luxury headings, Montserrat for clean readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for gold icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fancybox 5 for Image Zoom -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/tin-tuc.css">
+</head>
+<body>
+
+    <!-- Premium Sticky Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="header-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="logo-area" id="logoLink">
+                <img src="assets/images/header.png" alt="World Agarwood Logo" class="header-logo">
+            </a>
+
+            <!-- Desktop Navigation Menu -->
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li>
+                        <a href="index.html" class="nav-item">
+                            <img src="assets/images/icontrangchu.png" class="nav-icon-img" alt="Trang chủ"> TRANG CHỦ
+                        </a>
+                    </li>
+                    <li><a href="cong-nghe.html" class="nav-item"><img src="assets/images/iconcongnghe.png" class="nav-icon-img" alt="Công nghệ"> CÔNG NGHỆ</a></li>
+                    <li><a href="quy-trinh.html" class="nav-item"><img src="assets/images/iconquytrinh.png" class="nav-icon-img" alt="Quy trình"> QUY TRÌNH</a></li>
+                    <li><a href="dau-tu.html" class="nav-item"><img src="assets/images/icondautu.png" class="nav-icon-img" alt="Đầu tư"> ĐẦU TƯ</a></li>
+                    <li><a href="san-pham.html" class="nav-item"><img src="assets/images/iconsanpham.png" class="nav-icon-img" alt="Sản phẩm"> SẢN PHẨM</a></li>
+                    <li><a href="ve-chung-toi.html" class="nav-item"><img src="assets/images/iconvechungtoi.png" class="nav-icon-img" alt="Về chúng tôi"> VỀ CHÚNG TÔI</a></li>
+                    <li><a href="tin-tuc.html" class="nav-item active"><img src="assets/images/icontintuc.png" class="nav-icon-img" alt="Tin tuc"> TIN TỨC</a></li>
+                    <li><a href="lien-he.html" class="nav-item"><img src="assets/images/iconlienhe.png" class="nav-icon-img" alt="Liên hệ"> LIÊN HỆ</a></li>
+                    <li class="nav-dropdown">
+                        <a href="javascript:void(0)" class="nav-item"><img src="https://flagcdn.com/w40/vn.png" alt="VN" class="flag-icon current-lang-flag"> <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="submenu">
+                            <li><a href="javascript:void(0)" class="submenu-item lang-item active" data-lang="vi"><img src="https://flagcdn.com/w40/vn.png" alt="VN" class="flag-icon"> Tiếng Việt</a></li>
+                            <li><a href="javascript:void(0)" class="submenu-item lang-item" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon"> Tiếng Anh</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Call To Action Button (Liên Hệ Ngay) -->
+            <div class="header-cta">
+                <a href="tel:+84903885179" class="cta-button" id="ctaBtn">
+                    <div class="cta-shine"></div>
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span data-vi="LIÊN HỆ NGAY" data-en="CONTACT NOW">LIÊN HỆ NGAY</span>
+                </a>
+            </div>
+
+            <!-- Hamburger Button for Mobile -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <img src="assets/images/header.png" alt="World Agarwood Logo" class="drawer-logo">
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="index.html" class="drawer-item"><img src="assets/images/icontrangchu.png" class="nav-icon-img" alt="Trang chủ"> TRANG CHỦ</a></li>
+            <li><a href="cong-nghe.html" class="drawer-item"><img src="assets/images/iconcongnghe.png" class="nav-icon-img" alt="Công nghệ"> CÔNG NGHỆ</a></li>
+            <li><a href="quy-trinh.html" class="drawer-item"><img src="assets/images/iconquytrinh.png" class="nav-icon-img" alt="Quy trình"> QUY TRÌNH</a></li>
+            <li><a href="dau-tu.html" class="drawer-item"><img src="assets/images/icondautu.png" class="nav-icon-img" alt="Đầu tư"> ĐẦU TƯ</a></li>
+            <li><a href="san-pham.html" class="drawer-item"><img src="assets/images/iconsanpham.png" class="nav-icon-img" alt="Sản phẩm"> SẢN PHẨM</a></li>
+            <li><a href="ve-chung-toi.html" class="drawer-item"><img src="assets/images/iconvechungtoi.png" class="nav-icon-img" alt="Về chúng tôi"> VỀ CHÚNG TÔI</a></li>
+            <li><a href="tin-tuc.html" class="drawer-item active"><img src="assets/images/icontintuc.png" class="nav-icon-img" alt="Tin tuc"> TIN TỨC</a></li>
+            <li><a href="lien-he.html" class="drawer-item"><img src="assets/images/iconlienhe.png" class="nav-icon-img" alt="Liên hệ"> LIÊN HỆ</a></li>
+            <li class="drawer-dropdown">
+                <a href="javascript:void(0)" class="drawer-item" id="drawerLangToggle"><img src="https://flagcdn.com/w40/vn.png" alt="VN" class="flag-icon current-lang-flag"> <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="drawer-submenu">
+                    <li><a href="javascript:void(0)" class="drawer-submenu-item lang-item active" data-lang="vi"><img src="https://flagcdn.com/w40/vn.png" alt="VN" class="flag-icon"> Tiếng Việt</a></li>
+                    <li><a href="javascript:void(0)" class="drawer-submenu-item lang-item" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon"> Tiếng Anh</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="drawer-footer">
+            <a href="tel:+84903885179" class="drawer-cta-button">
+                <i class="fa-solid fa-phone"></i> <span data-vi="LIÊN HỆ NGAY" data-en="CONTACT NOW">LIÊN HỆ NGAY</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Mobile Drawer Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <!-- Main Content Section -->
+    <main id="mainSection">
+        
+        <!-- News Hero Section -->
+        <section class="news-hero">
+            <div class="news-hero-content">
+                <h1 data-vi="TIN TỨC &amp; KIẾN THỨC" data-en="NEWS &amp; KNOWLEDGE">TIN TỨC &amp; KIẾN THỨC</h1>
+                <div class="gold-divider">
+                    <span></span>
+                    <i class="fa-solid fa-gem"></i>
+                    <span></span>
+                </div>
+                <p data-vi="Khám phá các giá trị văn hóa nghệ thuật, bước đột phá công nghệ sinh học và tiềm năng kinh tế bền vững của Trầm Hương cao cấp." data-en="Explore the artistic cultural values, biological technology breakthroughs, and sustainable economic potential of premium Agarwood.">Khám phá các giá trị văn hóa nghệ thuật, bước đột phá công nghệ sinh học và tiềm năng kinh tế bền vững của Trầm Hương cao cấp.</p>
+            </div>
+        </section>
+
+        <!-- Main News Hub Layout (80% Grid Content, 20% Sidebar Category Filter) -->
+        <div class="news-hub-layout">
+            
+            <!-- Left Column: 80% News Content -->
+            <div class="news-main-content">
+                
+                <!-- Standard Grid Posts -->
+                <div class="news-grid">
+                    
+                    <!-- Card 0 (Investment - former featured card) -->
+                    <div class="article-card" data-category="investment">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="ĐẦU TƯ" data-en="INVESTMENT">ĐẦU TƯ</span>
+                            <img src="assets/images/art_featured.png" alt="Tương Lai Kinh Tế Của Trầm Hương Sinh Học">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 02/06/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Tương Lai Kinh Tế Của Trầm Hương Sinh Học: Tiềm Năng Lợi Nhuận Bền Vững Từ Cây Dó Bầu" data-en="The Economic Future of Biotech Agarwood: Sustainable Profit Potential from Aquilaria Trees">Tương Lai Kinh Tế Của Trầm Hương Sinh Học: Tiềm Năng Lợi Nhuận Bền Vững Từ Cây Dó Bầu</h3>
+                            <p class="card-excerpt" data-vi="Phân tích toàn diện về xu hướng phát triển trầm hương sinh học trên thế giới. Bài viết đi sâu lý giải tại sao việc áp dụng kỹ thuật sinh học cấy tạo trầm lên cây dó bầu đang trở thành kênh đầu tư hấp dẫn, mang lại giá trị kinh tế bền vững và bảo vệ nguồn trầm hoang dã quý hiếm." data-en="A comprehensive analysis of biological agarwood development trends globally. The article explains why biological inoculation on Aquilaria trees is becoming an attractive investment channel, bringing long-term economic value and protecting rare wild resources.">Phân tích toàn diện về xu hướng phát triển trầm hương sinh học trên thế giới. Bài viết đi sâu lý giải tại sao việc áp dụng kỹ thuật sinh học cấy tạo trầm lên cây dó bầu đang trở thành kênh đầu tư hấp dẫn, mang lại giá trị kinh tế bền vững và bảo vệ nguồn trầm hoang dã quý hiếm.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 1 (Crafts) -->
+                    <div class="article-card" data-category="craft">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="THỦ CÔNG" data-en="CRAFTS">THỦ CÔNG</span>
+                            <img src="assets/images/art_bracelet.png" alt="Nghệ Thuật Chế Tác Vòng Tay Trầm Hương">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 28/05/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Nghệ Thuật Chế Tác Vòng Tay Trầm Hương Từ Khối Gỗ Thô Sơ Khô Cằn" data-en="The Art of Crafting Agarwood Bracelets from Rough Raw Wood Blocks">Nghệ Thuật Chế Tác Vòng Tay Trầm Hương Từ Khối Gỗ Thô Sơ Khô Cằn</h3>
+                            <p class="card-excerpt" data-vi="Khám phá hành trình chế tác tỉ mỉ từ việc tiện hạt, mài dũa, đánh bóng thủ công để tạo ra một chiếc vòng tay trầm hương phong thủy thượng cấp giữ trọn vẹn vân dầu tự nhiên." data-en="Discover the meticulous crafting journey from bead turning, sanding, and manual polishing to create a high-class feng shui agarwood bracelet that preserves natural oil veins.">Khám phá hành trình chế tác tỉ mỉ từ việc tiện hạt, mài dũa, đánh bóng thủ công để tạo ra một chiếc vòng tay trầm hương phong thủy thượng cấp giữ trọn vẹn vân dầu tự nhiên.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 (Knowledge) -->
+                    <div class="article-card" data-category="knowledge">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="KIẾN THỨC" data-en="KNOWLEDGE">KIẾN THỨC</span>
+                            <img src="assets/images/art_knowledge.png" alt="Giá Trị Tâm Linh Của Nghi Thức Xông Trầm">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 22/05/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Giá Trị Tâm Linh Và Sức Khỏe Của Nghi Thức Xông Trầm Hương Cao Cấp" data-en="Spiritual and Health Values of Premium Agarwood Incense Ceremonies">Giá Trị Tâm Linh Và Sức Khỏe Của Nghi Thức Xông Trầm Hương Cao Cấp</h3>
+                            <p class="card-excerpt" data-vi="Tìm hiểu về nguồn gốc của văn hóa thưởng trầm, cách khói hương giúp làm thanh lọc không khí, tĩnh tâm, giảm lo âu và thu hút vượng khí cát tường trong phong thủy." data-en="Learn about the origins of agarwood appreciation culture, how smoke purifies the air, calms the mind, reduces anxiety, and attracts prosperous feng shui energy.">Tìm hiểu về nguồn gốc của văn hóa thưởng trầm, cách khói hương giúp làm thanh lọc không khí, tĩnh tâm, giảm lo âu và thu hút vượng khí cát tường trong phong thủy.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 (Biotech) -->
+                    <div class="article-card" data-category="biotech">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="CÔNG NGHỆ" data-en="BIOTECH">CÔNG NGHỆ</span>
+                            <img src="assets/images/art_science.png" alt="Công Nghệ Cấy Tạo Trầm Sinh Học">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 15/05/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Công Nghệ Cấy Tạo Trầm Hương Sinh Học: Bước Đột Phá Lớn Cho Ngành Trầm" data-en="Biotech Inoculation Technology: A Major Breakthrough for Agarwood Industry">Công Nghệ Cấy Tạo Trầm Hương Sinh Học: Bước Đột Phá Lớn Cho Ngành Trầm</h3>
+                            <p class="card-excerpt" data-vi="Làm thế nào khoa học sinh học kích thích cây dó bầu tích lũy nhựa dầu trầm hương tự nhiên mà không gây hại cho môi trường, đảm bảo hiệu suất cao và đồng đều." data-en="How biological science stimulates Aquilaria trees to accumulate natural agarwood resin without harming the environment, ensuring high and uniform yields.">Làm thế nào khoa học sinh học kích thích cây dó bầu tích lũy nhựa dầu trầm hương tự nhiên mà không gây hại cho môi trường, đảm bảo hiệu suất cao và đồng đều.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 (Investment) -->
+                    <div class="article-card" data-category="investment">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="ĐẦU TƯ" data-en="INVESTMENT">ĐẦU TƯ</span>
+                            <img src="assets/images/art_investment.png" alt="Lựa Chọn Giống Cây Dó Bầu">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 09/05/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Kinh Nghiệm Thực Tế Lựa Chọn Giống Cây Dó Bầu Cho Các Dự Án Gieo Trồng" data-en="Practical Insights on Selecting Aquilaria Saplings for Planting Projects">Kinh Nghiệm Thực Tế Lựa Chọn Giống Cây Dó Bầu Cho Các Dự Án Gieo Trồng</h3>
+                            <p class="card-excerpt" data-vi="Các tiêu chí quan trọng khi lựa chọn hạt giống và cây con dó bầu đạt tiêu chuẩn chất lượng cao, tăng sức đề kháng và tối ưu hóa khả năng tạo trầm sau này." data-en="Crucial criteria when selecting quality Aquilaria seeds and saplings, enhancing disease resistance and optimizing potential agarwood inducement down the line.">Các tiêu chí quan trọng khi lựa chọn hạt giống và cây con dó bầu đạt tiêu chuẩn chất lượng cao, tăng sức đề kháng và tối ưu hóa khả năng tạo trầm sau này.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 (Knowledge) -->
+                    <div class="article-card" data-category="knowledge">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="KIẾN THỨC" data-en="KNOWLEDGE">KIẾN THỨC</span>
+                            <img src="assets/images/art_knowledge.png" alt="Phân Biệt Trầm Tự Nhiên Và Nhân Tạo">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 05/05/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Phân Biệt Trầm Hương Tự Nhiên Và Trầm Nhân Tạo Bằng Mắt Thường" data-en="How to Visually Distinguish Natural from Artificial Agarwood">Phân Biệt Trầm Hương Tự Nhiên Và Trầm Nhân Tạo Bằng Mắt Thường</h3>
+                            <p class="card-excerpt" data-vi="Hướng dẫn chi tiết các mẹo nhỏ giúp bạn phân biệt chính xác trầm hương tự nhiên và các loại trầm ép dầu giả trên thị trường dựa vào vân gỗ và màu sắc." data-en="A detailed guide on simple tips to accurately distinguish natural agarwood from fake pressed oil agarwood based on wood grain and coloration.">Hướng dẫn chi tiết các mẹo nhỏ giúp bạn phân biệt chính xác trầm hương tự nhiên và các loại trầm ép dầu giả trên thị trường dựa vào vân gỗ và màu sắc.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 (Crafts) -->
+                    <div class="article-card" data-category="craft">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="THỦ CÔNG" data-en="CRAFTS">THỦ CÔNG</span>
+                            <img src="assets/images/art_bracelet.png" alt="Ý Nghĩa Số Hạt Vòng Trầm">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 01/05/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Ý Nghĩa Phong Thủy Của Số Lượng Hạt Trên Vòng Tay Trầm Hương" data-en="The Feng Shui Meaning of the Number of Beads on Agarwood Bracelets">Ý Nghĩa Phong Thủy Của Số Lượng Hạt Trên Vòng Tay Trầm Hương</h3>
+                            <p class="card-excerpt" data-vi="Tìm hiểu sâu sắc về ý nghĩa của số hạt trên vòng trầm theo quan niệm luân hồi Sinh - Lão - Bệnh - Tử và cách chọn vòng hợp mệnh nhất." data-en="Deep dive into the meaning of bead counts on agarwood bracelets based on Buddhist reincarnation cycles and how to select the best match for your destiny.">Tìm hiểu sâu sắc về ý nghĩa của số hạt trên vòng trầm theo quan niệm luân hồi Sinh - Lão - Bệnh - Tử và cách chọn vòng hợp mệnh nhất.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 (Biotech) -->
+                    <div class="article-card" data-category="biotech">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="CÔNG NGHỆ" data-en="BIOTECH">CÔNG NGHỆ</span>
+                            <img src="assets/images/art_science.png" alt="Tác Động Vi Sinh Học Tạo Trầm">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 25/04/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Tác Động Của Vi Sinh Học Trong Quy Trình Kích Thích Tạo Trầm" data-en="The Impact of Microbiology in Agarwood Inducement Process">Tác Động Của Vi Sinh Học Trong Quy Trình Kích Thích Tạo Trầm</h3>
+                            <p class="card-excerpt" data-vi="Nghiên cứu về các loại nấm ký sinh có lợi được sử dụng để kích thích thân cây dó bầu tự tổng hợp kháng thể nhựa thơm mà không ảnh hưởng tới tuổi thọ cây." data-en="Research on beneficial parasitic fungi used to stimulate Aquilaria tree trunks to synthesize aromatic resin antibodies without impacting tree lifespan.">Nghiên cứu về các loại nấm ký sinh có lợi được sử dụng để kích thích thân cây dó bầu tự tổng hợp kháng thể nhựa thơm mà không ảnh hưởng tới tuổi thọ cây.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 (Investment) -->
+                    <div class="article-card" data-category="investment">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="ĐẦU TƯ" data-en="INVESTMENT">ĐẦU TƯ</span>
+                            <img src="assets/images/art_investment.png" alt="Bản Đồ Phân Bố Vùng Trồng">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 18/04/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Bản Đồ Phân Bố Địa Lý Các Vùng Trồng Cây Dó Bầu Chất Lượng Nhất" data-en="Geographical Distribution Map of the Highest Quality Aquilaria Plantations">Bản Đồ Phân Bố Địa Lý Các Vùng Trồng Cây Dó Bầu Chất Lượng Nhất</h3>
+                            <p class="card-excerpt" data-vi="Đánh giá các vùng đất tại Việt Nam sở hữu thổ nhưỡng và khí hậu tối ưu nhất cho cây Dó Bầu tích lũy lượng tinh dầu thơm nồng nàn đặc trưng." data-en="Evaluating regions in Vietnam possessing optimal soil and climate conditions for Aquilaria trees to accumulate their characteristically rich aromatic essential oil.">Đánh giá các vùng đất tại Việt Nam sở hữu thổ nhưỡng và khí hậu tối ưu nhất cho cây Dó Bầu tích lũy lượng tinh dầu thơm nồng nàn đặc trưng.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 (Knowledge) -->
+                    <div class="article-card" data-category="knowledge">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="KIẾN THỨC" data-en="KNOWLEDGE">KIẾN THỨC</span>
+                            <img src="assets/images/art_featured.png" alt="Trầm Hương Trong Y Học Cổ Truyền">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 12/04/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Công Dụng Của Trầm Hương Trong Y Học Cổ Truyền Đông Tây" data-en="The Uses of Agarwood in Traditional Eastern and Western Medicine">Công Dụng Của Trầm Hương Trong Y Học Cổ Truyền Đông Tây</h3>
+                            <p class="card-excerpt" data-vi="Khám phá các bài thuốc quý sử dụng bột trầm hương để an thần, bổ khí, điều trị đau bụng và hỗ trợ tăng cường hệ thống tim mạch từ xa xưa." data-en="Explore valuable remedies using agarwood powder for calming the spirit, tonifying qi, treating abdominal pain, and supporting cardiovascular health since ancient times.">Khám phá các bài thuốc quý sử dụng bột trầm hương để an thần, bổ khí, điều trị đau bụng và hỗ trợ tăng cường hệ thống tim mạch từ xa xưa.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 10 (Crafts) -->
+                    <div class="article-card" data-category="craft">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="THỦ CÔNG" data-en="CRAFTS">THỦ CÔNG</span>
+                            <img src="assets/images/art_bracelet.png" alt="Chưng Cất Tinh Dầu Trầm">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 05/04/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Quy Trình Chưng Cất Tinh Dầu Trầm Hương Nguyên Chất Thượng Hạng" data-en="Distillation Process of Super Premium Pure Agarwood Essential Oil">Quy Trình Chưng Cất Tinh Dầu Trầm Hương Nguyên Chất Thượng Hạng</h3>
+                            <p class="card-excerpt" data-vi="Mô tả quy trình chưng cất hơi nước khép kín phức tạp kéo dài nhiều ngày để thu về những giọt tinh dầu trầm hương cô đọng có giá trị đắt hơn vàng." data-en="Describing the complex closed steam distillation process lasting several days to gather condensed drops of agarwood oil that are literally worth more than gold.">Mô tả quy trình chưng cất hơi nước khép kín phức tạp kéo dài nhiều ngày để thu về những giọt tinh dầu trầm hương cô đọng có giá trị đắt hơn vàng.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 11 (Biotech) -->
+                    <div class="article-card" data-category="biotech">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="CÔNG NGHỆ" data-en="BIOTECH">CÔNG NGHỆ</span>
+                            <img src="assets/images/art_science.png" alt="Bảo Vệ Nguồn Gen Cây Dó Bầu">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 29/03/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Giải Pháp Sinh Học Giúp Bảo Vệ Nguồn Gen Cây Dó Bầu Bản Địa" data-en="Biological Solutions to Protect Indigenous Aquilaria Gene Pools">Giải Pháp Sinh Học Giúp Bảo Vệ Nguồn Gen Cây Dó Bầu Bản Địa</h3>
+                            <p class="card-excerpt" data-vi="Làm thế nào việc bảo tồn các cây dó bầu cổ thụ giúp duy trì chất lượng gen tạo trầm vượt trội trước các rủi ro biến đổi khí hậu toàn cầu." data-en="How conserving ancient Aquilaria trees helps maintain superior agarwood-inducible gene quality against global climate change risks.">Làm thế nào việc bảo tồn các cây dó bầu cổ thụ giúp duy trì chất lượng gen tạo trầm vượt trội trước các rủi ro biến đổi khí hậu toàn cầu.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 12 (Investment) -->
+                    <div class="article-card" data-category="investment">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="ĐẦU TƯ" data-en="INVESTMENT">ĐẦU TƯ</span>
+                            <img src="assets/images/art_investment.png" alt="Nhu Cầu Trầm Hương Trung Đông">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 22/03/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Phân Tích Nhu Cầu Tiêu Thụ Trầm Hương Tại Thị Trường Trung Đông" data-en="Analyzing Agarwood Consumption Demand in the Middle East Market">Phân Tích Nhu Cầu Tiêu Thụ Trầm Hương Tại Thị Trường Trung Đông</h3>
+                            <p class="card-excerpt" data-vi="Đánh giá chi tiết sức mua khổng lồ của các quốc gia GCC đối với sản phẩm trầm hương xông đốt và các loại nước hoa Oud cao cấp trong thập kỷ tới." data-en="Analyzing Middle East consumption demand for burning agarwood products and premium Oud perfumes in the coming decade.">Đánh giá chi tiết sức mua khổng lồ của các quốc gia GCC đối với sản phẩm trầm hương xông đốt và các loại nước hoa Oud cao cấp trong thập kỷ tới.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 13 (Knowledge) -->
+                    <div class="article-card" data-category="knowledge">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="KIẾN THỨC" data-en="KNOWLEDGE">KIẾN THỨC</span>
+                            <img src="assets/images/art_knowledge.png" alt="Nghệ Thuật Kodo Nhật Bản">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 14/03/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Nghệ Thuật Thưởng Trầm Kodo Nhật Bản: Lịch Sử Và Triết Lý" data-en="The Japanese Art of Kodo Agarwood Appreciation: History and Philosophy">Nghệ Thuật Thưởng Trầm Kodo Nhật Bản: Lịch Sử Và Triết Lý</h3>
+                            <p class="card-excerpt" data-vi="Tìm hiểu về nghi lễ thưởng hương tinh tế Kodo của xứ sở mặt trời mọc - nơi người tham gia lắng nghe hương thơm thay vì ngửi đơn thuần." data-en="Learn about the refined incense appreciation ceremony Kodo of Japan - where participants listen to the fragrance rather than simply smell it.">Tìm hiểu về nghi lễ thưởng hương tinh tế Kodo của xứ sở mặt trời mọc - nơi người tham gia lắng nghe hương thơm thay vì ngửi đơn thuần.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 14 (Crafts) -->
+                    <div class="article-card" data-category="craft">
+                        <div class="card-img-wrapper">
+                            <span class="category-tag" data-vi="THỦ CÔNG" data-en="CRAFTS">THỦ CÔNG</span>
+                            <img src="assets/images/art_featured.png" alt="Phân Phẩm Cấp Trầm">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 08/03/2026</span>
+                                <span><i class="fa-solid fa-user"></i> Admin</span>
+                            </div>
+                            <h3 class="card-title" data-vi="Sự Khác Biệt Giữa Trầm Tốc, Trầm Banh Và Trầm Kỳ Nam Thượng Hạng" data-en="The Difference Between Tram Toc, Tram Banh, and Premium Ky Nam">Sự Khác Biệt Giữa Trầm Tốc, Trầm Banh Và Trầm Kỳ Nam Thượng Hạng</h3>
+                            <p class="card-excerpt" data-vi="Hướng dẫn chi tiết giúp phân loại các phẩm cấp trầm hương từ bình dân đến đắt đỏ nhất hành tinh dựa trên mật độ chứa dầu trong thớ gỗ." data-en="Detailed guide helping classify agarwood grades from budget to the most expensive on earth based on oil density within the wood fibers.">Hướng dẫn chi tiết giúp phân loại các phẩm cấp trầm hương từ bình dân đến đắt đỏ nhất hành tinh dựa trên mật độ chứa dầu trong thớ gỗ.</p>
+                            <a href="chi-tiet-tin-tuc.html" class="read-more-btn">
+                                <span data-vi="Đọc tiếp" data-en="Read more">Đọc tiếp</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Pagination Grid -->
+                <div class="pagination-container">
+                    <a href="#" class="page-link arrow"><i class="fa-solid fa-chevron-left"></i></a>
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <a href="#" class="page-link arrow"><i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+
+            </div>
+
+            <!-- Right Column: 20% Sidebar Category Filter -->
+            <aside class="news-sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title" data-vi="DANH MỤC" data-en="CATEGORIES">DANH MỤC</h3>
+                    <ul class="widget-categories">
+                        <li>
+                            <button class="filter-btn active" data-filter="all">
+                                <span data-vi="Tất cả" data-en="All">Tất cả</span>
+                                <span class="category-count">15</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="filter-btn" data-filter="knowledge">
+                                <span data-vi="Kiến Thức Trầm Hương" data-en="Agarwood Knowledge">Kiến Thức Trầm Hương</span>
+                                <span class="category-count">4</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="filter-btn" data-filter="craft">
+                                <span data-vi="Sản Phẩm &amp; Thủ Công" data-en="Products &amp; Crafts">Sản Phẩm &amp; Thủ Công</span>
+                                <span class="category-count">4</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="filter-btn" data-filter="biotech">
+                                <span data-vi="Công Nghệ Sinh Học" data-en="Biotechnology">Công Nghệ Sinh Học</span>
+                                <span class="category-count">3</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="filter-btn" data-filter="investment">
+                                <span data-vi="Đầu Tư &amp; Thị Trường" data-en="Investment &amp; Markets">Đầu Tư &amp; Thị Trường</span>
+                                <span class="category-count">4</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- Premium Luxury Footer Section -->
+    <footer id="footerSection" style="background: var(--bg-dark-secondary); border-top: 1px solid rgba(212, 175, 55, 0.2); padding: 50px 20px 20px 20px; font-family: var(--font-body);">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px;">
+            <!-- Brand Column -->
+            <div>
+                <img src="assets/images/header.png" alt="World Agarwood" style="height: 50px; margin-bottom: 20px;">
+                <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;" data-vi="World Agarwood tự hào mang đến các sản phẩm Trầm Hương tự nhiên thượng cấp, ứng dụng công nghệ sinh học đột phá và kiến tạo cơ hội đầu tư phát triển vững bền." data-en="World Agarwood is proud to deliver premium natural Agarwood products, applying biotechnology breakthroughs, and creating sustainable development investments.">World Agarwood tự hào mang đến các sản phẩm Trầm Hương tự nhiên thượng cấp, ứng dụng công nghệ sinh học đột phá và kiến tạo cơ hội đầu tư phát triển vững bền.</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="color: var(--gold-primary); font-size: 1.2rem; transition: var(--transition-fast);"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" style="color: var(--gold-primary); font-size: 1.2rem; transition: var(--transition-fast);"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" style="color: var(--gold-primary); font-size: 1.2rem; transition: var(--transition-fast);"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Quick Links Column -->
+            <div>
+                <h4 style="font-family: var(--font-heading); color: var(--text-light); text-transform: uppercase; font-size: 1rem; margin-bottom: 20px; border-left: 2px solid var(--gold-primary); padding-left: 10px;" data-vi="LIÊN KẾT NHANH" data-en="QUICK LINKS">LIÊN KẾT NHANH</h4>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem;">
+                    <li><a href="index.html" style="color: var(--text-muted); text-decoration: none; transition: var(--transition-fast);" data-vi="Trang Chủ" data-en="Home">Trang Chủ</a></li>
+                    <li><a href="cong-nghe.html" style="color: var(--text-muted); text-decoration: none; transition: var(--transition-fast);" data-vi="Công Nghệ Sinh Học" data-en="Biotechnology">Công Nghệ Sinh Học</a></li>
+                    <li><a href="quy-trinh.html" style="color: var(--text-muted); text-decoration: none; transition: var(--transition-fast);" data-vi="Quy Trình Chế Tác" data-en="Crafting Process">Quy Trình Chế Tác</a></li>
+                    <li><a href="dau-tu.html" style="color: var(--text-muted); text-decoration: none; transition: var(--transition-fast);" data-vi="Cơ Hội Đầu Tư" data-en="Investment Opportunities">Cơ Hội Đầu Tư</a></li>
+                </ul>
+            </div>
+            <!-- Contact Column -->
+            <div>
+                <h4 style="font-family: var(--font-heading); color: var(--text-light); text-transform: uppercase; font-size: 1rem; margin-bottom: 20px; border-left: 2px solid var(--gold-primary); padding-left: 10px;" data-vi="THÔNG TIN LIÊN HỆ" data-en="CONTACT INFORMATION">THÔNG TIN LIÊN HỆ</h4>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.85rem; color: var(--text-muted);">
+                    <li style="display: flex; gap: 10px; align-items: flex-start;">
+                        <i class="fa-solid fa-location-dot" style="color: var(--gold-primary); margin-top: 3px;"></i>
+                        <span data-vi="Khu Công Nghệ Cao, Quận 9, TP. Hồ Chí Minh, Việt Nam" data-en="High-Tech Park, District 9, Ho Chi Minh City, Vietnam">Khu Công Nghệ Cao, Quận 9, TP. Hồ Chí Minh, Việt Nam</span>
+                    </li>
+                    <li style="display: flex; gap: 10px; align-items: center;">
+                        <i class="fa-solid fa-phone" style="color: var(--gold-primary);"></i>
+                        <a href="tel:+84903885179" style="color: var(--text-muted); text-decoration: none;">+84 903 885 179</a>
+                    </li>
+                    <li style="display: flex; gap: 10px; align-items: center;">
+                        <i class="fa-solid fa-envelope" style="color: var(--gold-primary);"></i>
+                        <span>info@worldagarwood.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Bottom copyright bar -->
+        <div style="border-top: 1px solid rgba(212, 175, 55, 0.1); padding-top: 20px; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+            <p>&copy; 2026 World Agarwood. All Rights Reserved. Designed with luxury.</p>
+        </div>
+    </footer>
+
+    <!-- Fancybox 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <!-- Interactive Logic Script -->
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/tin-tuc.js"></script>
+</body>
+</html>
