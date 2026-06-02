@@ -93,14 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 7. Language Selection Logic (MPA)
+    // 7. Visual Language Toggle (Updates the dropdown flags visually, but page content remains static)
     const applyLanguage = (selectedLang) => {
         const langItems = document.querySelectorAll('.lang-item');
-
-        // Save to localStorage
         localStorage.setItem('selectedLang', selectedLang);
 
-        // Set active class for the clicked item's group
+        // Set active class for selected items
         langItems.forEach(l => {
             if (l.getAttribute('data-lang') === selectedLang) {
                 l.classList.add('active');
@@ -109,18 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Switch images in all tab contents (DISABLED as requested)
-        /*
-        document.querySelectorAll('.lang-img').forEach(img => {
-            if (img.classList.contains(selectedLang)) {
-                img.classList.add('active');
-            } else {
-                img.classList.remove('active');
-            }
-        });
-        */
-
-        // Update the main toggle flags
+        // Update the header flag icon
         const activeLangItem = document.querySelector(`.lang-item[data-lang="${selectedLang}"]`);
         if (activeLangItem) {
             const selectedFlag = activeLangItem.querySelector('img');
@@ -133,20 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         }
-
-        // Update texts based on selected language
-        const textVi = selectedLang === 'vi' ? 'Tiếng Việt' : 'Vietnamese';
-        const textEn = selectedLang === 'vi' ? 'Tiếng Anh' : 'English';
-
-        document.querySelectorAll('.lang-item[data-lang="vi"]').forEach(viItem => {
-            const img = viItem.querySelector('img');
-            if (img) viItem.innerHTML = img.outerHTML + ' ' + textVi;
-        });
-
-        document.querySelectorAll('.lang-item[data-lang="en"]').forEach(enItem => {
-            const img = enItem.querySelector('img');
-            if (img) enItem.innerHTML = img.outerHTML + ' ' + textEn;
-        });
     };
 
     // Apply saved language on page load

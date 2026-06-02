@@ -3,49 +3,10 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Language Translation Synchronization
-    const updateLanguageContent = (lang) => {
-        // Update all text nodes with data-vi and data-en attributes
-        document.querySelectorAll('[data-vi][data-en]').forEach(el => {
-            // Keep the entire main content area (banner, sidebar categories, articles) and the header CTA button in Vietnamese
-            const isNewsPageExcluded = el.closest('main') || el.closest('.header-cta');
-            const translation = (isNewsPageExcluded || lang === 'vi') ? el.getAttribute('data-vi') : el.getAttribute('data-en');
-            
-            // Check if element has child elements (e.g. icons) to preserve, or is simple text
-            const icon = el.querySelector('i');
-            if (icon) {
-                // If it contains an icon, replace only the text node part or rebuild
-                el.innerHTML = '';
-                el.appendChild(icon);
-                el.appendChild(document.createTextNode(' ' + translation));
-            } else {
-                el.textContent = translation;
-            }
-        });
 
-        // Update placeholders
-        document.querySelectorAll('[data-placeholder-vi][data-placeholder-en]').forEach(el => {
-            el.setAttribute('placeholder', lang === 'vi' ? el.getAttribute('data-placeholder-vi') : el.getAttribute('data-placeholder-en'));
-        });
-    };
+    // 1. Category Filter and Pagination functionality removed as requested (UI-only static rendering)
 
-    // Initialize current language
-    const getSavedLang = () => localStorage.getItem('selectedLang') || 'vi';
-    updateLanguageContent(getSavedLang());
-
-    // Listen for language selector clicks (both in desktop header and mobile drawer)
-    document.querySelectorAll('.lang-item').forEach(item => {
-        item.addEventListener('click', () => {
-            // Small delay to ensure localStorage has been updated by global.js
-            setTimeout(() => {
-                updateLanguageContent(getSavedLang());
-            }, 50);
-        });
-    });
-
-    // 2. Category Filter and Pagination functionality removed as requested (UI-only static rendering)
-
-    // 3. Dynamic Article Routing Simulation
+    // 2. Dynamic Article Routing Simulation
     document.querySelectorAll('.read-more-btn, .widget-post-item, .featured-content a').forEach(link => {
         link.addEventListener('click', function(e) {
             // Only handle if clicking to detail page
@@ -78,11 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const articleData = {
                     titleVi: titleEl ? (titleEl.getAttribute('data-vi') || titleEl.textContent) : '',
-                    titleEn: titleEl ? (titleEl.getAttribute('data-en') || titleEl.textContent) : '',
                     imgSrc: imgEl ? imgEl.getAttribute('src') : '',
                     dateStr: dateEl ? dateEl.textContent.trim().replace(/^Ngày\s+/i, '') : '',
-                    catVi: categoryEl ? (categoryEl.getAttribute('data-vi') || categoryEl.textContent) : 'TIN TỨC',
-                    catEn: categoryEl ? (categoryEl.getAttribute('data-en') || categoryEl.textContent) : 'NEWS'
+                    catVi: categoryEl ? (categoryEl.getAttribute('data-vi') || categoryEl.textContent) : 'TIN TỨC'
                 };
                 
                 localStorage.setItem('currentArticleData', JSON.stringify(articleData));
@@ -91,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Load article data if on detail page
+    // 3. Load article data if on detail page
     const detailContainer = document.querySelector('.article-main');
     if (detailContainer) {
         const storedData = localStorage.getItem('currentArticleData');
@@ -106,21 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (mainImg && data.imgSrc) mainImg.src = data.imgSrc;
                 if (titleEl && data.titleVi) {
-                    titleEl.setAttribute('data-vi', data.titleVi);
-                    titleEl.setAttribute('data-en', data.titleEn);
-                    titleEl.textContent = getSavedLang() === 'vi' ? data.titleVi : data.titleEn;
+                    titleEl.textContent = data.titleVi;
                 }
                 if (catEl && data.catVi) {
-                    catEl.setAttribute('data-vi', data.catVi);
-                    catEl.setAttribute('data-en', data.catEn);
-                    catEl.textContent = getSavedLang() === 'vi' ? data.catVi : data.catEn;
+                    catEl.textContent = data.catVi;
                 }
                 if (dateSpan && data.dateStr) {
-                    const viDate = "Ngày " + data.dateStr;
-                    const enDate = data.dateStr;
-                    dateSpan.setAttribute('data-vi', viDate);
-                    dateSpan.setAttribute('data-en', enDate);
-                    dateSpan.textContent = getSavedLang() === 'vi' ? viDate : enDate;
+                    dateSpan.textContent = "Ngày " + data.dateStr;
                 }
             } catch(e) {
                 console.error("Error loading article data:", e);
