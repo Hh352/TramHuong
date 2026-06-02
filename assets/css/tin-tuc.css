@@ -344,6 +344,12 @@
     transition: var(--transition-fast);
 }
 
+.card-title a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
 .article-card:hover .card-title,
 .featured-card:hover .featured-title {
     color: var(--gold-light);
@@ -943,5 +949,15 @@
     .article-share-section {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+/* 8. Desktop Sticky Sidebar */
+@media (min-width: 1101px) {
+    .news-sidebar, .article-sidebar {
+        position: sticky;
+        top: 100px; /* Space from top header */
+        align-self: start;
+        z-index: 10;
     }
 }

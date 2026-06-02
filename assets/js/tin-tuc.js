@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Category Filter and Pagination functionality removed as requested (UI-only static rendering)
 
     // 2. Dynamic Article Routing Simulation
-    document.querySelectorAll('.read-more-btn, .widget-post-item, .featured-content a').forEach(link => {
+    document.querySelectorAll('.article-link, .widget-post-item, .featured-content a').forEach(link => {
         link.addEventListener('click', function(e) {
             // Only handle if clicking to detail page
             if (this.getAttribute('href') === 'chi-tiet-tin-tuc.html') {
